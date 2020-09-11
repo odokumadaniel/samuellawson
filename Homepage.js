@@ -14,10 +14,10 @@ const os = require('os')
 const Port = process.env.Port || 3000;
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/public', express.static(__dirname + '/public'))
+app.use('/dist', express.static(__dirname + '/dist'))
 
-var image = fs.readdirSync('./public/Homepage_files')
-var mp3 = fs.readdirSync('./public/Musicmp3')
+var image = fs.readdirSync('./dist/Homepage_files')
+var mp3 = fs.readdirSync('./dist/Musicmp3')
 var webusersraw = convertjson('./users.txt')
 var webusers = JSON.stringify(webusersraw)
 var usersname = extractarrayfromobj('webusersraw', 'username', webusersraw)
