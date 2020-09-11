@@ -19,7 +19,7 @@ for(var i = 0; i<demoitems.length;i++){
     var ratings = this.getAttribute('data-ratings')
 
 
-document.getElementById("updatedclick").innerHTML = '<div class="w3-padding-16"><img id="pictureElement" src="'+picturemodal+'" style="width:25%;"><br></div><button id = "previewmodal" style="margin-top: 10px;" class="w3-button w3-blue">Preview</button><br><audio   id="musicmodal" controls><source src="./Musicmp3/'+namemodal+'.mp3" type="audio/mpeg"></audio><div  class="w3-panel w3-leftbar w3-sand  w3-serif"><table class="w3-table-all"><tr><th>Name</th><td id="songname">'+namemodal+'</td></tr><tr><th>Bpm</th><td>'+bpm+'</td></tr><tr><th>Year</th><td>'+year+'</td></tr><tr><th>Ratings</th><td>'+ratings+'</td></tr></table></div>'
+document.getElementById("updatedclick").innerHTML = '<div class="w3-padding-16"><img id="pictureElement" src="'+picturemodal+'" style="width:25%;"><br></div><button id = "previewmodal" style="margin-top: 10px;" class="w3-button w3-blue">Preview</button><br><audio   id="musicmodal" controls><source src="../public/Musicmp3/'+namemodal+'.mp3" type="audio/mpeg"></audio><div  class="w3-panel w3-leftbar w3-sand  w3-serif"><table class="w3-table-all"><tr><th>Name</th><td id="songname">'+namemodal+'</td></tr><tr><th>Bpm</th><td>'+bpm+'</td></tr><tr><th>Year</th><td>'+year+'</td></tr><tr><th>Ratings</th><td>'+ratings+'</td></tr></table></div>'
 var element = extract(shoppingarray)
 var elementwishlist = extract(wishlistarray)
 var joined =  element.toString()
@@ -113,8 +113,9 @@ return emptyarray
 //a pagination solution
 
 
-var arrayelements = [{name:"Super Bass",image:"jeans1", bpm:"128kbps", year:'2020',ratings:'50%', price:'N300'}]
-var numberelements = [{name:"Proud Vibes",image:"jeans2", bpm:"320kbps", year:'2020',ratings:'50%',price:'N400'}]
+var arrayelements = [{name:"Super Bass",image:"jeans2", bpm:"128kbps", year:'2020',ratings:'50%', price:'N300'}]
+var numberelements = [{name:"Proud Vibes",image:"jeans1", bpm:"320kbps", year:'2020',ratings:'50%',price:'N400'}]
+var totalelements = [{name:"Proud Vibes",image:"jeans1", bpm:"320kbps", year:'2020',ratings:'50%',price:'N400'},{name:"Super Bass",image:"jeans2", bpm:"128kbps", year:'2020',ratings:'50%', price:'N300'}]
 
 function paginationconversion(arrayelements,number){
 
@@ -166,7 +167,7 @@ var loadingpage = element[Number(this.innerText)-1]
 
         var figures = ''
 for(var i = 0; i<loadingpage.length;i++){
-    figures += '<div data-bpm = "'+loadingpage[i].bpm+'"  data-price = "'+loadingpage[i].price+'" data-year = "'+loadingpage[i].year+'"   data-ratings = "'+loadingpage[i].ratings+'"  data-title = '+i+' class="w3-col l3 s6 w3-animate-opacity"><div class="w3-container"><div class="w3-display-container"><span class="w3-tag w3-display-topleft">Free</span><img class = "imagesclass" src="./Homepage_files/'+loadingpage[i].image+'.jpg" style="width:200px;height:250px;object-fit: cover;"><p class = "title">'+loadingpage[i].name+'<br><b>'+loadingpage[i].price+'</b></p></div></div></div>'
+    figures += '<div data-bpm = "'+loadingpage[i].bpm+'"  data-price = "'+loadingpage[i].price+'" data-year = "'+loadingpage[i].year+'"   data-ratings = "'+loadingpage[i].ratings+'"  data-title = '+i+' class="w3-col l3 s6 w3-animate-opacity"><div class="w3-container"><div class="w3-display-container"><span class="w3-tag w3-display-topleft">Free</span><img class = "imagesclass" src="../public/Homepage_files/'+loadingpage[i].image+'.jpg" style="width:200px;height:250px;object-fit: cover;"><p class = "title">'+loadingpage[i].name+'<br><b>'+loadingpage[i].price+'</b></p></div></div></div>'
 
 }
 document.getElementById('imagegallery').innerHTML = figures
@@ -230,11 +231,11 @@ console.log(sectionindex)
 //this function is used for populating the numbers in pagination
 function populatepagination(arrayelements){
 var divisions  = Math.ceil(arrayelements.length/5)
-var pages = '<a id="firstpage1" href="./MusicPage.html#" class="w3-bar-item no w3-button  w3-hover-black ">1</a>'
+var pages = '<a id="firstpage1" href="./files/MusicPage.html#" class="w3-bar-item no w3-button  w3-hover-black ">1</a>'
 
 for(var i =1; i<divisions;i++){
     console.log(divisions)
-pages += ' <a  href="./MusicPage.html#" class="w3-bar-item no w3-button w3-hover-black">'+(i+1)+'</a>'
+pages += ' <a  href="./files/MusicPage.html#" class="w3-bar-item no w3-button w3-hover-black">'+(i+1)+'</a>'
 console.log('working..')
 }
 document.getElementById('paginationcontent').innerHTML = pages
@@ -370,12 +371,12 @@ document.getElementById('signupsection').innerHTML = signuppagehtml
 document.getElementById("wishlist").onclick = function(){
     console.log("clicked")
     document.getElementById('id05').style.display='block'
-
+    
 
     var wishlisthtml = ''
 if(wishlistarray.length>0){
 for(var i = 0;i<wishlistarray.length;i++){
-    wishlisthtml += '<li class="w3-bar wish w3-card-2 mb-2"><span  data-item = '+i+'  class="bg-light wish closingx w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span><img src="'+wishlistarray[i].image+'" class="w3-bar-item w3-circle " style="width:85px;height:75px"><div class="w3-bar-item"><span class="w3-large">'+wishlistarray[i].name+'</span><br><span>N200</span> <span><br></span></div></li>'
+    wishlisthtml += '<li data-item = '+i+' class="w3-bar wish w3-card-2 mb-2"><span  data-item = '+i+'  class="bg-light wish closingx w3-bar-item w3-button w3-white w3-xlarge w3-right">×</span><img src="'+wishlistarray[i].image+'" class="w3-bar-item w3-circle " style="width:85px;height:75px"><div class="w3-bar-item"><span class="w3-large nameelement">'+wishlistarray[i].name+'</span><br><span>N200</span> <span><br></span></div></li>'
 
 
     
@@ -391,7 +392,7 @@ for(var i = 0;i<wishlistarray.length;i++){
 }
 document.getElementById('wishtable').innerHTML = wishlisthtml
 
-//the x button in the shopping cart items
+//the x button in the wish cart items
 var closingwishlist = document.getElementsByClassName('bg-light wish closingx w3-bar-item ')
 var wishitem = document.getElementsByClassName('w3-bar wish w3-card-2 mb-2')
 
@@ -408,12 +409,134 @@ for(var i = 0; i<closingwishlist.length;i++){
 console.log(wishlistarray[j])
   }
 
+
+
+
   document.getElementById("wishnumbers").innerText = wishlistarray.length
 
     }
+
+    }
+
+    var wishname = document.getElementsByClassName('w3-large nameelement')
+
+
+    for(var i = 0; i<wishitem.length;i++){
+        wishitem[i].onclick = function(){
+             var index = Number(this.getAttribute('data-item'))
+console.log(index)
+           
+            
+            
+            for(var j = 0;j<totalelements.length;j++){
+                if(wishname[index].innerHTML == totalelements[j].name){
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+document.getElementById('id02').style.display='block'
+//we are getting the index of every clicked element
+
+//using the data index from the list, we are able to get the text value of the elemem
+var namemodal =  totalelements[j].name
+//and the images
+var picturemodal = totalelements[j].image
+var year = totalelements[j].year
+var bpm = totalelements[j].bpm
+var ratings = totalelements[j].ratings
+
+
+document.getElementById("updatedclick").innerHTML = '<div class="w3-padding-16"><img id="pictureElement" src=".public/Homepage_files/'+picturemodal+'.jpg" style="width:25%;"><br></div><button id = "previewmodal" style="margin-top: 10px;" class="w3-button w3-blue">Preview</button><br><audio   id="musicmodal" controls><source src="./Musicmp3/'+namemodal+'.mp3" type="audio/mpeg"></audio><div  class="w3-panel w3-leftbar w3-sand  w3-serif"><table class="w3-table-all"><tr><th>Name</th><td id="songname">'+namemodal+'</td></tr><tr><th>Bpm</th><td>'+bpm+'</td></tr><tr><th>Year</th><td>'+year+'</td></tr><tr><th>Ratings</th><td>'+ratings+'</td></tr></table></div>'
+var element = extract(shoppingarray)
+var elementwishlist = extract(wishlistarray)
+var joined =  element.toString()
+var joinedwishlist = elementwishlist.toString()
+
+
+console.log(joined)
+console.log(joined.indexOf(namemodal))
+console.log(shoppingarray.length)
+if(joined.indexOf(namemodal)> -1){ 
+document.getElementById('footer').innerHTML= '<p><button id="addtocartel" class="w3-btn w3-block w3-green">Added To Cart</button></p>'
+}else{
+document.getElementById('footer').innerHTML= '<p><button id="addtocartel" class="w3-btn w3-block w3-blue">Add to Cart</button></p>'
 }
 
+
+if(joinedwishlist.indexOf(namemodal)> -1){ 
+document.getElementById('footer2').innerHTML= '<p><button id="addtowishlist" class="w3-btn w3-block w3-black">Added To Wishlist</button></p>'
+}else{
+document.getElementById('footer2').innerHTML= '<p><button id="addtowishlist" class="w3-btn w3-block w3-yellow">Add To Wishlist</button></p>'
 }
+
+
+
+//adding item to cart
+document.getElementById("addtocartel").onclick = function(){
+
+if(this.innerText != 'Added To Cart' ){
+var itemtosell = {name:document.getElementById("songname").innerText,
+image:document.getElementById("pictureElement").src
+}
+
+this.className = this.className.replace('w3-blue', 'w3-green')
+this.innerText = 'Added To Cart'
+shoppingarray.push(itemtosell)
+document.getElementById("shoppingnumbers").innerText = shoppingarray.length
+}else{
+alert('Item Already included in Cart')
+}
+}
+
+document.getElementById('id05').style.display='none'
+
+document.getElementById("addtowishlist").onclick = function(){
+
+if(this.innerText != 'Added To Wishlist' ){
+    var itemtosell = {name:document.getElementById("songname").innerText,
+image:document.getElementById("pictureElement").src
+}
+
+this.className = this.className.replace('w3-yellow', 'w3-black')
+this.innerText = 'Added To Wishlist'
+wishlistarray.push(itemtosell)
+document.getElementById("wishnumbers").innerText = wishlistarray.length
+}else{
+alert('Item Already included in Wishlist')
+}
+      }
+
+
+
+try{
+
+document.getElementById('previewmodal').onclick = function(){
+
+
+}
+}catch(err){
+
+}
+document.getElementById("closemodal").onclick= function(){
+document.getElementById('id02').style.display='none'
+document.getElementById('musicmodal').pause()
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+}
+
+        
+        
+        }
+        }
+    }
+    }
+
+
 
 
 
@@ -448,6 +571,8 @@ function populatewishlist(){
         }
     }
     
+    
+  
     
     
     }

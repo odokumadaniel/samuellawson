@@ -1,12 +1,15 @@
 const mongoose = require('mongoose')
-const URI = "mongodb+srv://dbUser:dbUserPassword@cluster0.nusce.mongodb.net/admin?retryWrites=true&w=majority"
+const URI = "mongodb+srv://dbUser:dbUser@cluster0.nusce.mongodb.net/admin?retryWrites=true&w=majority"
 
 
 
 
-const connectDB = async ()=>{
+mongoose.connect(URI, {useNewUrlParser: true, useCreateIndex: true});
 
- await mongoose.connect(URI,{useUnifiedTopology:true,useNewUrlParser:true})
- console.log('db connected')
-}
+const connectDB = mongoose.connection;
+connectDB.once('open',()=>{
+    console.log("MongoDB database connection establish successfully");
+})
+
+
 module.exports = connectDB
