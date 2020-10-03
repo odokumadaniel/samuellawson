@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../public/css/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet"
+      href="file:///C:/Users/sict/Downloads/cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../public/css/bootstrap.css">
+    <script src="../public/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="../public/js/vendor/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../public/css/main.css">
+</head>
+
+<script> var Topsnew = '<%= Tops %>' 
+  var Cosplaynew = '<%= Cosplay %>' 
+  var three_dimensionnew = '<%= three_dimension %>' 
+  var picture_framesnew = '<%= picture_frames %>' 
+  var Manganew = '<%= Manga %>' 
+  var DVDnew = '<%= DVD %>' 
+  var Utensilsnew = '<%= Utensils %>'
+  var Latest_Productsnew = '<%= Latest_Products %>'
+  var Coming_Soonnew = '<%= Coming_Soon %>'
+  
+  var Tops= ejsobjectparse(Topsnew)
+  var Cosplay = ejsobjectparse(Cosplaynew)
+  var three_dimension= ejsobjectparse(three_dimensionnew)
+  var picture_frames = ejsobjectparse(picture_framesnew)
+  var Manga = ejsobjectparse(Manganew)
+  var DVD = ejsobjectparse(DVDnew)
+  var Utensils=  ejsobjectparse(Utensilsnew)
+  var Latest_Products=  ejsobjectparse(Latest_Productsnew)
+  var Coming_Soon=  ejsobjectparse(Coming_Soonnew)
+
+  
+  function ejsobjectparse(testobject){
+    try {
+      
+      var test1 = testobject.replace(/&#34;/g,'"')
+    var test2 = test1.replace(/&#34/g,'"')   
+   
+  return JSON.parse(test2)
+  
+    } catch (error) {
+      
+    }
+  
+  }
+  
+  
+      
+    
+    
+      </script>
+
+<body>
+    <div class="container">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Image</th>
+              <th>StickerImage</th>
+              <th>StickerWidth</th>
+              <th>StickerHeight</th>
+              <th>StickerX</th>
+              <th>StickerY</th>
+              <th>Discount Price</th>
+              <th>Real Price</th>
+              <th>Category</th>
+              <th>Anime</th>
+              <th>id</th>
+              <th>Availability</th>
+              
+              <div>
+                <h1><b>TOPS</b></h1>
+              
+                <tbody id="populatelementstops">
+                  <tr>
+                    <td><input class="form-control"  type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control"  type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control"  type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                    <td><input class="form-control" type="text"></td>
+                  </tr>
+                </tbody>
+              </div>        
+              
+              
+            </tr>
+          </thead>
+       
+  </table>  
+
+  
+  <div>
+    <h1><b>Picture Frame</b></h1>
+    <table class="table">
+      <th>Name</th>
+      <th>Image</th>
+      <th>StickerImage</th>
+      <th>StickerWidth</th>
+      <th>StickerHeight</th>
+      <th>StickerX</th>
+      <th>StickerY</th>
+      <th>Discount Price</th>
+      <th>Real Price</th>
+      <th>Category</th>
+      <th>Anime</th>
+      <th>id</th>
+      <th>Availability</th>
+    <tbody id="populatelementsframe">
+      <tr>
+        <td><input class="form-control"  type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control"  type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control"  type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+      </tr>
+    </tbody>
+</table>
+  </div>
+
+
+  <div>
+    <h1><b>3D Prints</b></h1>
+    <table class="table">
+        <th>Name</th>
+        <th>Image</th>
+        <th>StickerImage</th>
+        <th>StickerWidth</th>
+        <th>StickerHeight</th>
+        <th>StickerX</th>
+        <th>StickerY</th>
+        <th>Discount Price</th>
+        <th>Real Price</th>
+        <th>Category</th>
+        <th>Anime</th>
+        <th>id</th>
+        <th>Availability</th>
+    <tbody id="populatelementsprints">
+      <tr>
+        <td><input class="form-control"  type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control"  type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control"  type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+      </tr>
+    </tbody>
+</table>
+</div>
+
+<div>
+    <h1><b>Cosplay</b></h1>
+    <table class="table">
+      <th>Name</th>
+        <th>Image</th>
+        <th>StickerImage</th>
+        <th>StickerWidth</th>
+        <th>StickerHeight</th>
+        <th>StickerX</th>
+        <th>StickerY</th>
+        <th>Discount Price</th>
+        <th>Real Price</th>
+        <th>Category</th>
+        <th>Anime</th>
+        <th>id</th>
+        <th>Availability</th>
+    <tbody id="populatelementscosplay">
+      <tr>
+        <td><input class="form-control"  type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control"  type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control"  type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+      </tr>
+    </tbody>   
+</table>
+</div>
+
+
+
+<div>
+    <h1><b>Manga</b></h1>
+    <table class="table">
+      <th>Name</th>
+      <th>Image</th>
+      <th>StickerImage</th>
+      <th>StickerWidth</th>
+      <th>StickerHeight</th>
+      <th>StickerX</th>
+      <th>StickerY</th>
+      <th>Discount Price</th>
+      <th>Real Price</th>
+      <th>Category</th>
+      <th>Anime</th>
+      <th>id</th>
+      <th>Availability</th>
+    <tbody id="populatelementsmanga">
+      <tr>
+        <td><input class="form-control"  type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control"  type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control"  type="text"></td>
+        <td><input class="form-control" type="text"></td>
+        <td><input class="form-control" type="text"></td>
+      </tr>
+    </tbody>
+</table>      
+</div>
+
+
+<div>
+<h1><b>DVD</b></h1>
+<table class="table">
+  <th>Name</th>
+  <th>Image</th>
+  <th>StickerImage</th>
+  <th>StickerWidth</th>
+  <th>StickerHeight</th>
+  <th>StickerX</th>
+  <th>StickerY</th>
+  <th>Discount Price</th>
+  <th>Real Price</th>
+  <th>Category</th>
+  <th>Anime</th>
+  <th>id</th>
+  <th>Availability</th>
+<tbody id="populatelementsdvd">
+<tr>
+<td><input class="form-control"  type="text"></td>
+<td><input class="form-control" type="text"></td>
+<td><input class="form-control" type="text"></td>
+<td><input class="form-control"  type="text"></td>
+<td><input class="form-control" type="text"></td>
+<td><input class="form-control" type="text"></td>
+<td><input class="form-control"  type="text"></td>
+<td><input class="form-control" type="text"></td>
+<td><input class="form-control" type="text"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div>
+<h1><b>Utensils</b></h1>
+<table class="table">
+  <th>Name</th>
+  <th>Image</th>
+  <th>StickerImage</th>
+  <th>StickerWidth</th>
+  <th>StickerHeight</th>
+  <th>StickerX</th>
+  <th>StickerY</th>
+  <th>Discount Price</th>
+  <th>Real Price</th>
+  <th>Category</th>
+  <th>Anime</th>
+  <th>id</th>
+  <th>Availability</th>
+<tbody id="populatelementsutensils">
+<tr>
+<td><input class="form-control"  type="text"></td>
+<td><input class="form-control" type="text"></td>
+<td><input class="form-control" type="text"></td>
+<td><input class="form-control"  type="text"></td>
+<td><input class="form-control" type="text"></td>
+<td><input class="form-control" type="text"></td>
+<td><input class="form-control"  type="text"></td>
+<td><input class="form-control" type="text"></td>
+<td><input class="form-control" type="text"></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<div>
+  <h1><b>Latest Products </b></h1>
+  <table class="table">
+    <th>Name</th>
+        <th>Image</th>
+        <th>StickerImage</th>
+        <th>StickerWidth</th>
+        <th>StickerHeight</th>
+        <th>StickerX</th>
+        <th>StickerY</th>
+        <th>Discount Price</th>
+        <th>Real Price</th>
+        <th>Category</th>
+        <th>Anime</th>
+        <th>id</th>
+        <th>Availability</th>
+  <tbody id="populatelementslatestproducts">
+  <tr>
+  <td><input class="form-control"  type="text"></td>
+  <td><input class="form-control" type="text"></td>
+  <td><input class="form-control" type="text"></td>
+  <td><input class="form-control"  type="text"></td>
+  <td><input class="form-control" type="text"></td>
+  <td><input class="form-control" type="text"></td>
+  <td><input class="form-control"  type="text"></td>
+  <td><input class="form-control" type="text"></td>
+  <td><input class="form-control" type="text"></td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+
+
+
+  <div>
+    <h1><b>Coming Soon</b></h1>
+    <table class="table">
+      <th>Name</th>
+      <th>Image</th>
+      <th>StickerImage</th>
+      <th>StickerWidth</th>
+      <th>StickerHeight</th>
+      <th>StickerX</th>
+      <th>StickerY</th>
+      <th>Discount Price</th>
+      <th>Real Price</th>
+      <th>Category</th>
+      <th>Anime</th>
+      <th>id</th>
+      <th>Availability</th>
+    <tbody id="populatelementscomingsoon">
+    <tr>
+    <td><input class="form-control"  type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control"  type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control"  type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    <td><input class="form-control" type="text"></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+<button class="btn btn-primary" id="submitbtn" >Submit</button>
+ <a class = "btn btn-primary" href="./admin">Upload Values</a> 
+       
+<div id="createquickform" >
+
+</div>
+
+          
+       
+
+          
+  
+      
+      </div>
+  
+      <script src="../public/js/edit.js"></script>
+
+</body>
+</html>
